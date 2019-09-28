@@ -1,11 +1,10 @@
-package com.example.daftarmenu
+package com.example.daftarmenu.main
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentContainer
 
 class FragmentMinuman : Fragment() {
     companion object {

@@ -1,13 +1,16 @@
-package com.example.daftarmenu
+package com.example.daftarmenu.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
+import com.example.daftarmenu.R
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+
+    private val pages = listOf(FragmentMakanan(), FragmentMinuman())
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,16 +22,17 @@ class MainActivity : AppCompatActivity() {
 
     inner class ViewPagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
         override fun getItem(position: Int): Fragment {
-            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+            return  pages[position]
         }
 
         override fun getCount(): Int {
-            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-        }
+            return pages.size
+              }
 
         private val pages = listOf(
-            FragmentMinuman.getInstance(),
-            FragmentMakanan.getInstance()
+
+            FragmentMakanan.getInstance(),
+            FragmentMinuman.getInstance()
         )
 
         override fun getPageTitle(position: Int): CharSequence? {
